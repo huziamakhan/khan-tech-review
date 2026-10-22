@@ -14,18 +14,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="ewOWWMnkw48WCRPHj35P4Z-QRSdgBcQfYiJVM8G3zg" />
-  <title>Khan Tech & Review | Next-Gen Tech News, Reviews & AI Trends</title>
+  
+  <!-- SEO & Meta Tags -->
+  <title>Khan Tech Review | Latest Gadget & Tech Reviews</title>
+  <meta name="description" content="Get honest tech reviews, latest smartphone updates, laptop buying guides, and gadget news at Khan Tech Review.">
 
-  <!-- SEO Meta Description -->
-  <meta name="description" content="Khan Tech Review offers the latest smartphone reviews, gadget updates, AI trends, and tech news. Stay ahead with in-depth analysis and expert guides.">
-
-  <!-- Open Graph Tags (For Social Media Shares) -->
-  <meta property="og:title" content="Khan Tech & Review | Next-Gen Tech News, Reviews & AI Trends">
-  <meta property="og:description" content="Latest tech news, smartphone reviews, and AI updates at Khan Tech Review.">
+  <!-- Open Graph Tags (Social Media Shares) -->
+  <meta property="og:title" content="Khan Tech Review | Latest Gadget & Tech Reviews">
+  <meta property="og:description" content="Honest tech reviews and buying guides.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://huziamakhan.github.io/khan-tech-review/">
 
-  <!-- Schema Markup (Google Search Rich Snippets) -->
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,13 +50,11 @@
                       glassBorder: 'rgba(255, 255, 255, 0.08)',
                       neonCyan: '#00F0FF',
                       neonOrange: '#FF5500',
-                      accentGradient: 'linear-gradient(135deg, #00F0FF 0%, #FF5500 100%)'
                   },
                   fontFamily: {
                       sans: ['Inter', 'sans-serif'],
                   },
                   animation: {
-                      'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                       'marquee': 'marquee 25s linear infinite',
                   },
                   keyframes: {
@@ -70,9 +68,8 @@
       }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -96,19 +93,10 @@
           width: 0%;
           transition: width 0.1s ease-out;
       }
-      ::-webkit-scrollbar {
-          width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-          background: #090D16;
-      }
-      ::-webkit-scrollbar-thumb {
-          background: #1F2937;
-          border-radius: 9999px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-          background: #00F0FF;
-      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #090D16; }
+      ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: #00F0FF; }
       .glass-panel {
           background: rgba(17, 24, 39, 0.75);
           backdrop-filter: blur(16px);
@@ -133,12 +121,8 @@
     <!-- READING PROGRESS BAR -->
     <div id="readingProgress"></div>
 
-    <!-- BACKGROUND GLOW EFFECTS -->
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-neonCyan/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
-    <div class="fixed top-1/3 right-10 w-96 h-96 bg-neonOrange/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
-
     <!-- GLASSMORPHISM HEADER -->
-    <header class="sticky top-0 z-40 glass-panel border-b border-white/10 transition-colors">
+    <header class="sticky top-0 z-40 glass-panel border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
@@ -159,13 +143,13 @@
 
                 <!-- Navigation Tabs -->
                 <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm text-slate-300">
-                    <button onclick="filterCategory('All')" class="nav-tab px-4 py-2 rounded-xl text-white hover:bg-white/5 transition flex items-center gap-2">
+                    <button onclick="filterCategory('All')" class="nav-tab px-4 py-2 rounded-xl text-white hover:bg-white/5 transition flex items-center gap-2 cursor-pointer">
                         <i class="fas fa-bolt text-neonCyan"></i> Home
                     </button>
-                    <button onclick="filterCategory('Tech News')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition">Tech News</button>
-                    <button onclick="filterCategory('Mobile Reviews')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition">Mobile Reviews</button>
-                    <button onclick="filterCategory('AI & Gadgets')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition">AI & Gadgets</button>
-                    <button onclick="filterCategory('How-To Guides')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition">How-To Guides</button>
+                    <button onclick="filterCategory('Tech News')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition cursor-pointer">Tech News</button>
+                    <button onclick="filterCategory('Mobile Reviews')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition cursor-pointer">Mobile Reviews</button>
+                    <button onclick="filterCategory('AI & Gadgets')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition cursor-pointer">AI & Gadgets</button>
+                    <button onclick="filterCategory('How-To Guides')" class="nav-tab px-4 py-2 rounded-xl hover:text-white hover:bg-white/5 transition cursor-pointer">How-To Guides</button>
                 </nav>
 
                 <!-- Actions: Search & Bookmarks -->
@@ -176,14 +160,14 @@
                         <i class="fas fa-search absolute left-3.5 top-3 text-slate-500 text-sm"></i>
                     </div>
 
-                    <button onclick="showBookmarks()" class="relative px-4 py-2 rounded-xl bg-neonCyan/10 text-neonCyan border border-neonCyan/30 hover:bg-neonCyan/20 transition flex items-center gap-2 text-xs font-bold shadow-lg shadow-neonCyan/5">
+                    <button onclick="showBookmarks()" class="relative px-4 py-2 rounded-xl bg-neonCyan/10 text-neonCyan border border-neonCyan/30 hover:bg-neonCyan/20 transition flex items-center gap-2 text-xs font-bold shadow-lg cursor-pointer">
                         <i class="fas fa-bookmark"></i>
                         <span class="hidden sm:inline">Saved</span>
                         <span id="bookmarkBadge" class="bg-neonCyan text-black text-[10px] px-1.5 py-0.2 rounded-full font-black">0</span>
                     </button>
 
                     <!-- Mobile Drawer Toggle -->
-                    <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white">
+                    <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white cursor-pointer">
                         <i class="fas fa-bars-staggered text-lg"></i>
                     </button>
                 </div>
@@ -193,11 +177,8 @@
 
         <!-- MOBILE DRAWER NAV -->
         <div id="mobileMenu" class="hidden lg:hidden bg-darkCard border-b border-white/10 px-4 pt-3 pb-5 space-y-2">
-            <div class="relative mb-3">
-                <input type="text" id="mobileSearchInput" oninput="handleMobileSearch()" placeholder="Search articles..." 
-                    class="w-full bg-darkBg text-sm text-slate-200 placeholder-slate-500 rounded-xl py-2.5 pl-10 pr-4 border border-white/10 focus:outline-none focus:border-neonCyan">
-                <i class="fas fa-search absolute left-3.5 top-3 text-slate-500 text-sm"></i>
-            </div>
+            <input type="text" id="mobileSearchInput" oninput="handleMobileSearch()" placeholder="Search articles..." 
+                class="w-full bg-darkBg text-sm text-slate-200 placeholder-slate-500 rounded-xl py-2.5 pl-10 pr-4 border border-white/10 focus:outline-none focus:border-neonCyan mb-3">
             <button onclick="filterCategory('All')" class="block w-full text-left px-4 py-2.5 text-slate-200 hover:bg-white/5 rounded-xl font-medium">Home</button>
             <button onclick="filterCategory('Tech News')" class="block w-full text-left px-4 py-2.5 text-slate-300 hover:bg-white/5 rounded-xl font-medium">Tech News</button>
             <button onclick="filterCategory('Mobile Reviews')" class="block w-full text-left px-4 py-2.5 text-slate-300 hover:bg-white/5 rounded-xl font-medium">Mobile Reviews</button>
@@ -214,10 +195,9 @@
             </span>
             <div class="overflow-hidden relative w-full">
                 <div class="flex whitespace-nowrap space-x-8 animate-marquee text-xs font-medium text-slate-300">
-                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="openArticleModal(8)">🔥 Apple iPhone 18 Pro Leaks: Under-Display Face ID & AI Camera</span>
-                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="openArticleModal(7)">⚡ OpenAI Agentic AI Revolution: Autonomous Reasoning Models Unveiled</span>
-                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="openArticleModal(1)">🔥 Samsung Galaxy S26 Ultra Leaks: 200MP AI Camera & 3100 Nits Display</span>
-                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="openArticleModal(4)">💡 Google Pixel 10 Pro Benchmarks Reveal TSMC 3nm Tensor G5 Power</span>
+                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="filterByQuery('iPhone 18')">🔥 Apple iPhone 18 Pro Leaks: Under-Display Face ID & AI Camera</span>
+                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="filterByQuery('OpenAI')">⚡ OpenAI Agentic AI Revolution: Autonomous Reasoning Models Unveiled</span>
+                    <span class="cursor-pointer hover:text-neonCyan transition" onclick="filterByQuery('Samsung')">🔥 Samsung Galaxy S26 Ultra Leaks: 200MP AI Camera & 3100 Nits Display</span>
                 </div>
             </div>
         </div>
@@ -233,15 +213,12 @@
             <!-- Main Featured Headline (Left Column - 8 Cols) -->
             <div class="lg:col-span-8">
               <a href="iphone-18-pro-leaks.html" class="group relative block w-full h-full min-h-[420px] rounded-3xl overflow-hidden glass-card border border-slate-800">
-                <!-- Background Image -->
                 <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop" 
                      alt="iPhone 18 Pro Leaks" 
                      class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" />
                 
-                <!-- Dark Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
 
-                <!-- Content Container -->
                 <div class="relative z-20 p-6 sm:p-8 h-full flex flex-col justify-end">
                   <div class="flex items-center gap-2 mb-3">
                     <span class="bg-gradient-to-r from-neonCyan to-blue-600 text-black text-[11px] font-black px-3 py-1 rounded-lg uppercase tracking-wider">
@@ -285,7 +262,7 @@
               </div>
 
               <!-- Hot Card 1 -->
-              <a href="#article-2" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
+              <a href="#articlesGrid" onclick="filterByQuery('OpenAI')" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50 cursor-pointer">
                 <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="AI Models" />
                 <div class="overflow-hidden">
                   <span class="text-[10px] font-bold text-neonCyan uppercase block">AI & GADGETS</span>
@@ -295,7 +272,7 @@
               </a>
 
               <!-- Hot Card 2 -->
-              <a href="samsung-s26-ultra-review.html" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
+              <a href="samsung-s26-ultra-review.html" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50 cursor-pointer">
                 <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Samsung S26" />
                 <div class="overflow-hidden">
                   <span class="text-[10px] font-bold text-neonCyan uppercase block">MOBILE REVIEWS</span>
@@ -305,7 +282,7 @@
               </a>
 
               <!-- Hot Card 3 -->
-              <a href="#article-3" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
+              <a href="#articlesGrid" onclick="filterByQuery('Pixel')" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50 cursor-pointer">
                 <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Pixel 10" />
                 <div class="overflow-hidden">
                   <span class="text-[10px] font-bold text-neonOrange uppercase block">TECH NEWS</span>
@@ -331,19 +308,18 @@
                         <p id="currentCategorySub" class="text-xs text-slate-400">Curated gadget reviews, Android insights, and breakthroughs</p>
                     </div>
 
-                    <!-- Category Pills -->
                     <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                        <button onclick="filterCategory('All')" class="cat-pill active bg-gradient-to-r from-neonCyan to-blue-600 text-black font-extrabold px-4 py-2 rounded-xl transition shadow-lg">All</button>
-                        <button onclick="filterCategory('Tech News')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition">Tech News</button>
-                        <button onclick="filterCategory('Mobile Reviews')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition">Mobile Reviews</button>
-                        <button onclick="filterCategory('AI & Gadgets')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition">AI & Gadgets</button>
-                        <button onclick="filterCategory('How-To Guides')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition">How-To</button>
+                        <button onclick="filterCategory('All')" class="cat-pill active bg-gradient-to-r from-neonCyan to-blue-600 text-black font-extrabold px-4 py-2 rounded-xl transition shadow-lg cursor-pointer">All</button>
+                        <button onclick="filterCategory('Tech News')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition cursor-pointer">Tech News</button>
+                        <button onclick="filterCategory('Mobile Reviews')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition cursor-pointer">Mobile Reviews</button>
+                        <button onclick="filterCategory('AI & Gadgets')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition cursor-pointer">AI & Gadgets</button>
+                        <button onclick="filterCategory('How-To Guides')" class="cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition cursor-pointer">How-To</button>
                     </div>
                 </div>
 
                 <!-- Articles Grid -->
                 <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- JavaScript Injected Content -->
+                    <!-- JS Injected -->
                 </div>
 
                 <!-- No Search Results -->
@@ -351,7 +327,7 @@
                     <i class="fas fa-search-minus text-5xl text-slate-600"></i>
                     <h3 class="text-xl font-bold text-white">No Matching Articles Found</h3>
                     <p class="text-xs text-slate-400 max-w-sm mx-auto">We couldn't find any post matching your query. Try searching for different keywords.</p>
-                    <button onclick="filterCategory('All')" class="px-5 py-2.5 bg-neonOrange text-white text-xs font-extrabold rounded-xl shadow-lg hover:bg-orange-600 transition">
+                    <button onclick="filterCategory('All')" class="px-5 py-2.5 bg-neonOrange text-white text-xs font-extrabold rounded-xl shadow-lg hover:bg-orange-600 transition cursor-pointer">
                         Reset Filters
                     </button>
                 </div>
@@ -374,7 +350,7 @@
                         <form onsubmit="handleSubscribe(event)" class="space-y-2.5 pt-2">
                             <input type="email" required placeholder="Enter your email address..." 
                                    class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-neonCyan transition">
-                            <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-neonCyan to-blue-600 text-black font-black rounded-xl text-xs uppercase tracking-wider hover:opacity-90 transition shadow-lg shadow-neonCyan/20">
+                            <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-neonCyan to-blue-600 text-black font-black rounded-xl text-xs uppercase tracking-wider hover:opacity-90 transition shadow-lg cursor-pointer">
                                 Subscribe Free <i class="fas fa-paper-plane ml-1"></i>
                             </button>
                         </form>
@@ -387,11 +363,11 @@
                         <i class="fas fa-tags text-neonCyan"></i> POPULAR TECH TAGS
                     </h3>
                     <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                        <button onclick="filterByQuery('apple')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition">#Apple</button>
-                        <button onclick="filterByQuery('openai')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition">#OpenAI</button>
-                        <button onclick="filterByQuery('samsung')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition">#Samsung</button>
-                        <button onclick="filterByQuery('pixel')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition">#GooglePixel</button>
-                        <button onclick="filterByQuery('battery')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition">#BatteryHacks</button>
+                        <button onclick="filterByQuery('Apple')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition cursor-pointer">#Apple</button>
+                        <button onclick="filterByQuery('OpenAI')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition cursor-pointer">#OpenAI</button>
+                        <button onclick="filterByQuery('Samsung')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition cursor-pointer">#Samsung</button>
+                        <button onclick="filterByQuery('Pixel')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition cursor-pointer">#GooglePixel</button>
+                        <button onclick="filterByQuery('Battery')" class="px-3 py-1.5 rounded-lg bg-darkBg border border-white/10 hover:border-neonCyan text-slate-300 transition cursor-pointer">#BatteryHacks</button>
                     </div>
                 </div>
 
@@ -427,7 +403,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
                 
-                <!-- Col 1: Brand -->
                 <div class="lg:col-span-5 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonCyan to-neonOrange flex items-center justify-center text-black font-black text-xl shadow-lg">
@@ -442,7 +417,6 @@
                     </p>
                 </div>
 
-                <!-- Col 2: Quick Links -->
                 <div class="lg:col-span-3 space-y-3">
                     <h4 class="text-xs font-black tracking-widest text-white uppercase">Categories</h4>
                     <ul class="space-y-2 text-xs font-semibold">
@@ -453,7 +427,6 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Social Links -->
                 <div class="lg:col-span-4 space-y-3">
                     <h4 class="text-xs font-black tracking-widest text-white uppercase">Connect With Us</h4>
                     <div class="flex items-center gap-3">
@@ -478,7 +451,7 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT ARTICLES ENGINE -->
+    <!-- JAVASCRIPT ENGINE -->
     <script>
       const articles = [
         {
@@ -548,13 +521,14 @@
       function renderArticles(items) {
         const grid = document.getElementById('articlesGrid');
         const noResults = document.getElementById('noResults');
+        if (!grid) return;
         grid.innerHTML = '';
 
         if (items.length === 0) {
-          noResults.classList.remove('hidden');
+          if (noResults) noResults.classList.remove('hidden');
           return;
         } else {
-          noResults.classList.add('hidden');
+          if (noResults) noResults.classList.add('hidden');
         }
 
         items.forEach(article => {
@@ -564,10 +538,10 @@
               <div>
                 <div class="relative overflow-hidden h-48 sm:h-52">
                   <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                  <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-neonCyan text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-lg border border-white/10">
+                  <span class="absolute top-4 left-4 bg-black/65 backdrop-blur-md text-neonCyan text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-lg border border-white/10">
                     ${article.category}
                   </span>
-                  <button onclick="toggleBookmark(${article.id}, event)" class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-black/60 backdrop-blur-md flex items-center justify-center text-white hover:text-neonCyan transition">
+                  <button onclick="toggleBookmark(${article.id}, event)" class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-black/65 backdrop-blur-md flex items-center justify-center text-white hover:text-neonCyan transition cursor-pointer">
                     <i class="${isSaved ? 'fas text-neonCyan' : 'far'} fa-bookmark"></i>
                   </button>
                 </div>
@@ -600,9 +574,9 @@
       function filterCategory(cat) {
         document.querySelectorAll('.cat-pill').forEach(btn => {
           if (btn.innerText.toLowerCase() === cat.toLowerCase() || (cat === 'All' && btn.innerText === 'All')) {
-            btn.className = "cat-pill active bg-gradient-to-r from-neonCyan to-blue-600 text-black font-extrabold px-4 py-2 rounded-xl transition shadow-lg";
+            btn.className = "cat-pill active bg-gradient-to-r from-neonCyan to-blue-600 text-black font-extrabold px-4 py-2 rounded-xl transition shadow-lg cursor-pointer";
           } else {
-            btn.className = "cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition";
+            btn.className = "cat-pill bg-darkCard border border-white/10 text-slate-300 hover:border-neonCyan px-3.5 py-2 rounded-xl transition cursor-pointer";
           }
         });
 
@@ -615,20 +589,27 @@
       }
 
       function handleSearch() {
-        const query = document.getElementById('searchInput').value.toLowerCase();
+        const input = document.getElementById('searchInput');
+        if (!input) return;
+        const query = input.value.toLowerCase();
         const filtered = articles.filter(a => a.title.toLowerCase().includes(query) || a.excerpt.toLowerCase().includes(query));
         renderArticles(filtered);
       }
 
       function handleMobileSearch() {
-        const query = document.getElementById('mobileSearchInput').value.toLowerCase();
+        const input = document.getElementById('mobileSearchInput');
+        if (!input) return;
+        const query = input.value.toLowerCase();
         const filtered = articles.filter(a => a.title.toLowerCase().includes(query) || a.excerpt.toLowerCase().includes(query));
         renderArticles(filtered);
       }
 
       function filterByQuery(q) {
-        document.getElementById('searchInput').value = q;
-        handleSearch();
+        const input = document.getElementById('searchInput');
+        if (input) input.value = q;
+        const query = q.toLowerCase();
+        const filtered = articles.filter(a => a.title.toLowerCase().includes(query) || a.excerpt.toLowerCase().includes(query));
+        renderArticles(filtered);
       }
 
       function toggleBookmark(id, e) {
@@ -643,7 +624,8 @@
       }
 
       function updateBookmarkBadge() {
-        document.getElementById('bookmarkBadge').innerText = savedBookmarks.length;
+        const badge = document.getElementById('bookmarkBadge');
+        if (badge) badge.innerText = savedBookmarks.length;
       }
 
       function showBookmarks() {
@@ -661,17 +643,21 @@
       }
 
       // Mobile menu toggle
-      document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('hidden');
-      });
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+          const menu = document.getElementById('mobileMenu');
+          if (menu) menu.classList.toggle('hidden');
+        });
+      }
 
-      // Reading Progress Bar logic
+      // Reading Progress Bar
       window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        document.getElementById('readingProgress').style.width = scrolled + '%';
+        const prog = document.getElementById('readingProgress');
+        if (prog) prog.style.width = scrolled + '%';
       });
 
       // Initial Render

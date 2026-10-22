@@ -224,38 +224,41 @@
     <!-- MAIN CONTAINER -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         
-      <!-- HERO SPLIT FEATURED SECTION -->
+    <!-- HERO SPLIT FEATURED SECTION -->
     <section id="heroSection" class="mb-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         
         <!-- Main Featured Headline (Left Column - 8 Cols) -->
         <div class="lg:col-span-8">
-          <a href="iphone-18-pro-leaks.html" class="block cursor-pointer group relative rounded-3xl overflow-hidden glass-card p-0 flex flex-col justify-end h-full min-h-[420px]">
+          <a href="iphone-18-pro-leaks.html" class="group relative block w-full h-full min-h-[420px] rounded-3xl overflow-hidden glass-card border border-slate-800">
+            <!-- Background Image -->
             <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop" 
                  alt="iPhone 18 Pro Leaks" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 min-h-[420px] absolute inset-0 z-0" />
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" />
             
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-1"></div>
+            <!-- Dark Gradient Overlay (Fixed z-index) -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
 
-            <div class="relative z-10 p-6 sm:p-8 space-y-3">
-              <div class="flex items-center gap-2 mb-2">
+            <!-- Content Container -->
+            <div class="relative z-20 p-6 sm:p-8 h-full flex flex-col justify-end">
+              <div class="flex items-center gap-2 mb-3">
                 <span class="bg-gradient-to-r from-neonCyan to-blue-600 text-black text-[11px] font-black px-3 py-1 rounded-lg uppercase tracking-wider">
                   FEATURED LEAK
                 </span>
-                <span class="text-xs text-slate-300 font-semibold bg-black/40 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
+                <span class="text-xs text-slate-300 font-semibold bg-black/50 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
                   <i class="far fa-clock mr-1 text-neonCyan"></i> 6 min read
                 </span>
               </div>
 
-              <h1 class="text-2xl sm:text-4xl font-black text-white group-hover:text-neonCyan transition-colors leading-tight">
+              <h1 class="text-2xl sm:text-4xl font-black text-white group-hover:text-neonCyan transition-colors leading-tight drop-shadow-md">
                 Apple iPhone 18 Pro Leaks: Under-Display Face ID & Revolutionary AI Camera Integration
               </h1>
 
-              <p class="text-slate-300 text-sm sm:text-base line-clamp-2 max-w-3xl font-normal">
+              <p class="text-slate-300 text-sm sm:text-base line-clamp-2 max-w-2xl font-normal mt-2">
                 Apple's upcoming iPhone 18 Pro leaks suggest major design breakthroughs, including seamless under-display Face ID sensors and advanced AI-powered cameras.
               </p>
 
-              <div class="flex items-center gap-3 pt-3 mt-2 border-t border-slate-800/60">
+              <div class="flex items-center gap-3 pt-4 mt-3 border-t border-slate-800/80">
                 <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-neonCyan to-neonOrange p-0.5 shrink-0">
                   <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-xs font-bold text-white">HK</div>
                 </div>
@@ -280,13 +283,38 @@
           </div>
 
           <!-- Hot Card 1 -->
-          <a href="#article-2" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all">
+          <a href="#article-2" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="AI Models" />
-            <div>
-              <span class="text-[10px] font-bold text-neonCyan uppercase">AI & GADGETS</span>
+            <div class="overflow-hidden">
+              <span class="text-[10px] font-bold text-neonCyan uppercase block">AI & GADGETS</span>
               <h4 class="text-xs font-bold text-white group-hover:text-neonCyan transition-colors line-clamp-2 mt-0.5">OpenAI Agentic AI Revolution: Autonomous Models</h4>
-              <span class="text-[10px] text-slate-400">Oct 22, 2026 • 5 min</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Oct 22, 2026 • 5 min</span>
             </div>
+          </a>
+
+          <!-- Hot Card 2 -->
+          <a href="samsung-s26-ultra-review.html" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
+            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Samsung S26" />
+            <div class="overflow-hidden">
+              <span class="text-[10px] font-bold text-neonCyan uppercase block">MOBILE REVIEWS</span>
+              <h4 class="text-xs font-bold text-white group-hover:text-neonCyan transition-colors line-clamp-2 mt-0.5">Samsung Galaxy S26 Ultra Full Review: AI Camera King</h4>
+              <span class="text-[10px] text-slate-400 block mt-1">Oct 20, 2026 • 8 min</span>
+            </div>
+          </a>
+
+          <!-- Hot Card 3 -->
+          <a href="#article-3" class="glass-card rounded-2xl p-4 flex gap-4 items-center group hover:border-neonCyan/50 transition-all border border-slate-800/60 bg-slate-900/50">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="Pixel 10" />
+            <div class="overflow-hidden">
+              <span class="text-[10px] font-bold text-neonOrange uppercase block">TECH NEWS</span>
+              <h4 class="text-xs font-bold text-white group-hover:text-neonCyan transition-colors line-clamp-2 mt-0.5">Google Pixel 10 Pro Tensor G5 Chip Benchmarks Leaked</h4>
+              <span class="text-[10px] text-slate-400 block mt-1">Oct 18, 2026 • 4 min</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
           </a>
 
           <!-- Hot Card 2 -->

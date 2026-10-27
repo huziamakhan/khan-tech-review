@@ -1,91 +1,226 @@
 
-
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>iPhone 18 Pro Review: Features, Camera, AI & Price Guide | Khan Tech Review</title>
-  <meta name="description" content="Explore the iPhone 18 Pro's official features, camera system, A20 Pro chip, Apple Intelligence, battery and charging, buying advice, and Pakistan price guidance.">
+  <title>iPhone 18 Pro Review & Buying Guide | Khan Tech Review</title>
+
+  <meta name="description" content="Explore the iPhone 18 Pro camera, performance, Apple Intelligence, battery, storage and practical buying advice for readers in Pakistan.">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Khan Tech Review">
+  <meta name="theme-color" content="#090D16">
+
   <link rel="canonical" href="https://huziamakhan.github.io/khan-tech-review/iphone-18-pro-leaks.html">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="iPhone 18 Pro Review: Features, Camera & Buying Guide">
-  <meta property="og:description" content="A practical guide to the iPhone 18 Pro, including its camera, performance, AI features, charging and buying considerations.">
-  <meta property="og:url" content="https://huziamakhan.github.io/khan-tech-review/iphone-18-pro-leaks.html">
   <meta property="og:site_name" content="Khan Tech Review">
+  <meta property="og:title" content="iPhone 18 Pro Review & Buying Guide">
+  <meta property="og:description" content="Explore iPhone 18 Pro features, camera, AI, battery and buying advice for Pakistan.">
+  <meta property="og:url" content="https://huziamakhan.github.io/khan-tech-review/iphone-18-pro-leaks.html">
+  <meta property="og:locale" content="en_US">
+
   <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#090D16">
+  <meta name="twitter:title" content="iPhone 18 Pro Review & Buying Guide">
+  <meta name="twitter:description" content="A practical guide to iPhone 18 Pro features, camera, AI and buying considerations.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            darkBg: '#090D16',
-            darkCard: '#111827',
-            neonCyan: '#00F0FF',
-            neonOrange: '#FF5500'
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d16;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #a5b4c7;
+      --cyan: #00f0ff;
+      --border: #273449;
+      --orange: #ff5500;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background: #090D16;
-      color: #E5E7EB;
-      font-family: Inter, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.8;
     }
-    .glass {
-      background: rgba(17, 24, 39, .86);
-      border: 1px solid rgba(148, 163, 184, .18);
-      backdrop-filter: blur(12px);
-    }
-    .article-content h2 {
-      color: #fff;
-      font-size: 1.65rem;
-      font-weight: 800;
-      margin: 2.5rem 0 1rem;
-      line-height: 1.3;
-    }
-    .article-content h3 {
-      color: #67E8F9;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 1.7rem 0 .7rem;
-    }
-    .article-content p {
-      color: #CBD5E1;
-      line-height: 1.9;
-      margin: 1rem 0;
-    }
-    .article-content ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      color: #CBD5E1;
-      line-height: 1.9;
-      margin: 1rem 0;
-    }
-    .article-content li { margin: .45rem 0; }
-    .article-content a {
-      color: #67E8F9;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .article-content a:hover { color: #fff; }
-    .accent-line {
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #00F0FF, #FF5500, transparent);
+      z-index: 1000;
+      background: linear-gradient(90deg, var(--cyan), var(--orange));
+    }
+
+    header {
+      position: sticky;
+      top: 3px;
+      z-index: 100;
+      background: rgba(9, 13, 22, .94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: .9rem;
+    }
+
+    .nav-links a { color: var(--text); }
+
+    .container {
+      max-width: 900px;
+      padding: 30px 20px 60px;
+      margin: auto;
+    }
+
+    .breadcrumbs {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    article {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: clamp(20px, 5vw, 48px);
+      overflow-wrap: anywhere;
+    }
+
+    .category {
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 { line-height: 1.3; color: white; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      margin: 12px 0 18px;
+      letter-spacing: -.04em;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      margin-top: 42px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    h3 { font-size: 1.15rem; margin-top: 25px; }
+
+    p, li { color: #d1d9e6; }
+
+    .byline {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      color: #f3f4f6;
+    }
+
+    .note {
+      padding: 16px 18px;
+      border-left: 3px solid var(--cyan);
+      background: #0b1421;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: .92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th { background: #182337; color: white; }
+
+    .related {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .related h2 { margin-top: 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 12px 0;
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links { gap: 12px; }
+      .container { padding: 22px 12px 40px; }
+      article { padding: 20px 16px; }
     }
   </style>
 
@@ -94,14 +229,15 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "iPhone 18 Pro Review: Features, Camera, AI and Buying Guide",
-    "description": "A practical guide to the iPhone 18 Pro's features, camera, performance, AI tools, charging and buying considerations.",
+    "description": "Explore iPhone 18 Pro features, camera, performance, Apple Intelligence, battery and practical buying advice for Pakistan.",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://huziamakhan.github.io/khan-tech-review/iphone-18-pro-leaks.html"
     },
     "author": {
       "@type": "Organization",
-      "name": "Khan Tech Review"
+      "name": "Khan Tech Review",
+      "url": "https://huziamakhan.github.io/khan-tech-review/about.html"
     },
     "publisher": {
       "@type": "Organization",
@@ -115,273 +251,379 @@
   </script>
 </head>
 
-<body class="min-h-screen">
-  <header class="sticky top-0 z-50 border-b border-slate-800 bg-darkBg/95 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-      <a href="index.html" class="text-lg font-extrabold tracking-tight text-white sm:text-xl">
-        KHAN <span class="text-neonCyan">TECH REVIEW</span>
-      </a>
-      <nav aria-label="Main navigation" class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm text-slate-300">
-        <a class="hover:text-neonCyan" href="index.html">Home</a>
-        <a class="hover:text-neonCyan" href="about.html">About</a>
-        <a class="hover:text-neonCyan" href="contact.html">Contact</a>
-      </nav>
-    </div>
+<body>
+  <div class="progress" id="readingProgress"></div>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">KHAN <span>TECH REVIEW</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </nav>
   </header>
 
-  <div class="accent-line"></div>
-
-  <main class="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
-    <div class="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-400">
-      <a href="index.html" class="hover:text-neonCyan">Home</a>
-      <span aria-hidden="true">/</span>
-      <span class="text-neonCyan">Mobile Reviews</span>
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a> / Mobile Reviews / iPhone 18 Pro
     </div>
 
-    <article class="glass overflow-hidden rounded-3xl">
-      <div class="p-5 sm:p-9 lg:p-12">
-        <div class="mb-5 flex flex-wrap gap-2">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-300">Apple</span>
-          <span class="rounded-full border border-slate-600 px-3 py-1 text-xs font-semibold text-slate-300">Smartphone Guide</span>
-        </div>
+    <article>
+      <div class="category">Smartphone Guide · Apple</div>
 
-        <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-          iPhone 18 Pro Review: Features, Camera, AI and Buying Guide
-        </h1>
+      <h1>iPhone 18 Pro: Features, Camera, AI and Buying Guide</h1>
 
-        <p class="mt-5 text-lg leading-8 text-slate-300">
-          Apple's Pro iPhone lineup focuses on performance, photography and premium features. In this guide, we look at the iPhone 18 Pro's announced features, what they could mean in everyday use, and what buyers should consider before spending their money.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-b border-slate-700 pb-6 text-sm text-slate-400">
-          <span>By <strong class="text-slate-200">Khan Tech Review</strong></span>
-          <span>Updated: October 27, 2026</span>
-          <span>Reading time: about 7 minutes</span>
-        </div>
-
-        <div class="article-content mt-8">
-          <div class="rounded-2xl border border-cyan-400/20 bg-slate-950/70 p-5 sm:p-6">
-            <h2 class="!mt-0 !text-xl">Quick Overview</h2>
-            <ul>
-              <li><strong>Processor:</strong> Apple A20 Pro chip, announced with the iPhone 18 Pro lineup.</li>
-              <li><strong>Main camera:</strong> 48MP Fusion Main camera with variable aperture.</li>
-              <li><strong>Display design:</strong> Apple announced a smaller Dynamic Island.</li>
-              <li><strong>Software:</strong> iOS 27 and Apple's supported intelligence features.</li>
-              <li><strong>Charging:</strong> Apple advertises charging to around 50% in approximately 15 minutes under supported wired-charging conditions.</li>
-              <li><strong>Pakistan price:</strong> Check current local listings and official availability before buying; prices vary by storage, taxes, warranty and seller.</li>
-            </ul>
-            <p class="!mb-0 text-sm">
-              Specifications and availability can differ by region and model. Confirm important details with Apple before purchasing.
-            </p>
-          </div>
-
-          <h2>1. iPhone 18 Pro: What's New?</h2>
-          <p>
-            The iPhone 18 Pro is Apple's premium smartphone for people who want a powerful mobile device for photography, video, gaming and everyday productivity. Apple's official announcement highlights changes to the camera system, processor and front display design.
-          </p>
-          <p>
-            Whether these changes are worth the upgrade depends on the phone you currently own. People using an older iPhone may notice a more meaningful overall improvement than people who already have a recent Pro model.
-          </p>
-
-          <h2>2. Design and Display</h2>
-          <p>
-            Apple announced a smaller Dynamic Island as part of the iPhone 18 Pro design. The Dynamic Island provides a place for supported alerts, live activities and background tasks while keeping useful information visible.
-          </p>
-          <p>
-            A premium phone's display is about more than its appearance. Brightness, outdoor readability, colour quality and smooth scrolling all affect the daily experience. If display quality is important to you, compare the exact regional model and its official specifications before deciding.
-          </p>
-          <h3>Is the design a reason to upgrade?</h3>
-          <p>
-            If your current phone is working well, a design change alone may not justify the cost. Consider upgrading when the overall package—camera, performance, battery condition and software support—offers a noticeable benefit for your needs.
-          </p>
-
-          <h2>3. Camera System and Photography</h2>
-          <p>
-            Camera performance is one of the main reasons people choose an iPhone Pro. Apple lists a 48MP Fusion Main camera with variable aperture for the iPhone 18 Pro. Variable aperture can help the camera adapt to different photographic situations.
-          </p>
-          <p>
-            For everyday photography, the final image depends on more than megapixels. Lens quality, exposure, focus, image processing, lighting and how steady you hold the phone all matter.
-          </p>
-          <h3>What should you test in the camera?</h3>
-          <ul>
-            <li><strong>Daylight photos:</strong> Look for natural colours, detail and balanced highlights.</li>
-            <li><strong>Night photography:</strong> Check whether dark areas retain detail without excessive noise.</li>
-            <li><strong>Portraits:</strong> Examine edge detection, skin tones and background blur.</li>
-            <li><strong>Video:</strong> Test stabilisation, autofocus and sound in the conditions where you normally record.</li>
-            <li><strong>Zoom:</strong> Compare supported zoom levels and image quality rather than relying only on marketing numbers.</li>
-          </ul>
-          <p>
-            If you create YouTube Shorts, Facebook Reels or product videos, also test the camera with your preferred social apps. Recording quality and processing can vary between apps and settings.
-          </p>
-
-          <h2>4. A20 Pro Chip and Performance</h2>
-          <p>
-            Apple announced the A20 Pro chip for the iPhone 18 Pro generation. A newer processor can improve demanding tasks, but real-world performance also depends on software optimisation, temperature, battery condition and the apps you use.
-          </p>
-          <p>
-            For normal browsing, messaging and social media, most modern premium phones already feel responsive. The biggest practical benefits of a faster chip are more likely to matter during demanding gaming, video editing, computational photography and other intensive workloads.
-          </p>
-          <h3>Gaming and content creation</h3>
-          <p>
-            If gaming is important, look for stable performance over longer sessions, comfortable temperatures and consistent frame rates—not just a short benchmark result. For creators, test how smoothly your editing app handles high-resolution clips and exports.
-          </p>
-
-          <h2>5. Apple Intelligence and iOS 27</h2>
-          <p>
-            Apple's announcement connects the iPhone 18 Pro lineup with iOS 27 and its supported Apple Intelligence experiences. AI features can assist with selected writing, organisation and other supported tasks, depending on the feature, language, region and software version.
-          </p>
-          <p>
-            AI availability should not be assumed to be identical for every user. Some features may require a compatible language, internet connection, supported account settings or a software update. Check Apple's current documentation to confirm which functions are available where you live.
-          </p>
-          <h3>Who might benefit from AI features?</h3>
-          <ul>
-            <li>Students who want help organising notes or working with supported writing tools.</li>
-            <li>Professionals who use compatible tools to manage information and everyday tasks.</li>
-            <li>Content creators who want to explore supported editing and productivity features.</li>
-          </ul>
-          <p>
-            AI features are tools, not a substitute for checking important information. Review generated text and results before using them for school, work or public posts.
-          </p>
-
-          <h2>6. Battery Life and Charging</h2>
-          <p>
-            Battery life depends on network signal, screen brightness, camera use, gaming, background activity and many other factors. Apple advertises up to 36 hours of video playback for specified eSIM-only models, but this is a controlled-use estimate rather than a promise of the same runtime for every person.
-          </p>
-          <p>
-            Apple also describes charging to around 50% in approximately 15 minutes under supported wired-charging conditions. Actual charging speed can vary with the adapter, cable, temperature, battery level and settings. Check the official requirements for the exact model.
-          </p>
-          <h3>Battery tips for everyday use</h3>
-          <ul>
-            <li>Use automatic brightness or lower the screen brightness when practical.</li>
-            <li>Keep your software updated.</li>
-            <li>Review apps that use substantial background activity.</li>
-            <li>Use compatible, reputable charging accessories.</li>
-            <li>Check battery health if you are buying a used iPhone.</li>
-          </ul>
-
-          <h2>7. Storage and Choosing the Right Model</h2>
-          <p>
-            Choose storage based on how you use your phone. Photos, 4K videos, offline downloads, games and editing projects can consume space quickly. Cloud storage can help with some files, but it does not remove every need for local storage.
-          </p>
-          <p>
-            Before buying, confirm the available storage options for your region directly from Apple or an authorised seller. Do not rely on unverified listings or assume that every capacity is available in every market.
-          </p>
-
-          <h2>8. iPhone 18 Pro Price in Pakistan</h2>
-          <p>
-            The price in Pakistan can differ according to storage capacity, import status, applicable taxes, seller margin, warranty and availability. Currency movements can also change local prices.
-          </p>
-          <p>
-            We recommend checking current prices from reputable retailers and confirming whether a device is officially supported, what warranty is included, and whether any relevant registration or tax costs apply. Avoid making a purchase decision based on an old price or a social media rumour.
-          </p>
-          <ul>
-            <li>Ask for the exact model number and storage capacity.</li>
-            <li>Confirm the warranty terms in writing.</li>
-            <li>Check whether the device is new, used or refurbished.</li>
-            <li>Compare the final payable price, not just the advertised starting price.</li>
-          </ul>
-
-          <h2>9. Should You Upgrade to the iPhone 18 Pro?</h2>
-          <p>
-            The iPhone 18 Pro may be worth considering if you need a premium camera system, high performance and Apple's current software features. The best choice depends on your budget and the device you currently use.
-          </p>
-          <h3>It may be a good fit if you:</h3>
-          <ul>
-            <li>Regularly record photos and videos for work or social media.</li>
-            <li>Use demanding apps or mobile games.</li>
-            <li>Want the features available in Apple's current Pro lineup.</li>
-            <li>Can comfortably afford the phone without stretching your budget.</li>
-          </ul>
-          <h3>You may want to wait if you:</h3>
-          <ul>
-            <li>Already own a recent iPhone Pro that meets your needs.</li>
-            <li>Mostly use messaging, browsing and basic apps.</li>
-            <li>Would need to compromise on essentials to afford the upgrade.</li>
-            <li>Prefer to wait for more independent reviews and local price comparisons.</li>
-          </ul>
-
-          <h2>10. Frequently Asked Questions</h2>
-          <div class="space-y-5">
-            <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
-              <h3 class="!mt-0">Has Apple officially announced the iPhone 18 Pro?</h3>
-              <p class="!mb-0">Apple published an official announcement for the iPhone 18 Pro lineup. Refer to Apple's newsroom for the confirmed details and availability information.</p>
-            </div>
-            <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
-              <h3 class="!mt-0">What main camera does the iPhone 18 Pro have?</h3>
-              <p class="!mb-0">Apple lists a 48MP Fusion Main camera with variable aperture. Check the official technical specifications for the complete camera system.</p>
-            </div>
-            <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
-              <h3 class="!mt-0">Does the iPhone 18 Pro support AI features?</h3>
-              <p class="!mb-0">Apple announced iOS 27 and supported Apple Intelligence experiences for this generation. Availability can depend on language, region, software and feature requirements.</p>
-            </div>
-            <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
-              <h3 class="!mt-0">What is the iPhone 18 Pro price in Pakistan?</h3>
-              <p class="!mb-0">Local prices can vary by storage, taxes, warranty and seller. Check current reputable listings and confirm the total cost before purchasing.</p>
-            </div>
-            <div class="rounded-xl border border-slate-700 bg-slate-950/50 p-4">
-              <h3 class="!mt-0">Should I upgrade from an older iPhone?</h3>
-              <p class="!mb-0">Compare your current phone's battery condition, camera, performance and software support with the new model. Upgrade when the practical improvements justify the cost for you.</p>
-            </div>
-          </div>
-
-          <h2>Final Verdict</h2>
-          <p>
-            The iPhone 18 Pro brings together Apple's announced camera, chip, design and software updates in a premium smartphone. Its value will depend on which features matter most to you, how your current phone performs and the price available in your market.
-          </p>
-          <p>
-            Before buying, confirm specifications and availability using Apple's official information, compare trusted local prices, and look for independent real-world reviews. That is a safer way to decide than relying on rumours or unverified specifications.
-          </p>
-
-          <div class="my-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-5 sm:p-6">
-            <h2 class="!mt-0 !text-xl">Official Source</h2>
-            <p>
-              Read Apple's announcement for confirmed product information:
-              <a href="https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener noreferrer">Apple Newsroom — iPhone 18 Pro and iPhone 18 Pro Max</a>.
-            </p>
-            <p class="!mb-0">
-              Keep exploring technology news and guides on
-              <a href="index.html">Khan Tech Review</a>.
-            </p>
-          </div>
-
-          <p class="text-sm !text-slate-400">
-            Disclaimer: This article is for general information. Features, prices, availability and software support may change. Always verify important details with Apple or an authorised seller before making a purchase.
-          </p>
-        </div>
+      <div class="byline">
+        By Khan Tech Review · Published October 22, 2026 · Updated October 27, 2026
       </div>
-    </article>
 
-    <section class="mt-8 grid gap-4 sm:grid-cols-2">
-      <a href="index.html" class="glass rounded-2xl p-5 transition hover:border-cyan-400/50">
-        <span class="text-sm text-slate-400">Explore more</span>
-        <span class="mt-2 block font-bold text-white">← Back to Khan Tech Review</span>
-      </a>
-      <a href="samsung-s26-ultra-review.html" class="glass rounded-2xl p-5 transition hover:border-cyan-400/50">
-        <span class="text-sm text-slate-400">Related article</span>
-        <span class="mt-2 block font-bold text-white">Read the Samsung Galaxy S26 Ultra Review →</span>
-      </a>
-    </section>
+      <p class="intro">
+        Thinking about buying the iPhone 18 Pro? This guide covers the main
+        features to investigate, camera and performance considerations,
+        software and AI, battery expectations, and practical buying advice
+        for readers in Pakistan.
+      </p>
+
+      <div class="note">
+        <strong>Before you buy:</strong> Check Apple's official specifications
+        and local seller information for confirmed features, availability,
+        warranty, and current prices. Specifications and prices can vary by
+        region and retailer.
+      </div>
+
+      <h2>1. iPhone 18 Pro: Quick Overview</h2>
+
+      <p>
+        Apple's Pro iPhone models are aimed at users who want premium build
+        quality, capable cameras, strong performance, and long-term software
+        support. Before deciding whether the iPhone 18 Pro is right for you,
+        compare its confirmed specifications with your current phone and your
+        everyday needs.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>What to check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Display</td>
+              <td>Screen size, refresh rate, brightness and outdoor visibility.</td>
+            </tr>
+            <tr>
+              <td>Camera</td>
+              <td>Photo quality, low-light results, zoom and video recording options.</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td>Processor, gaming performance, heat management and multitasking.</td>
+            </tr>
+            <tr>
+              <td>AI and software</td>
+              <td>Supported Apple Intelligence features, language availability and compatibility.</td>
+            </tr>
+            <tr>
+              <td>Battery</td>
+              <td>Real-world endurance, charging speed and included accessories.</td>
+            </tr>
+            <tr>
+              <td>Buying in Pakistan</td>
+              <td>Current price, PTA status, warranty and seller reliability.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Design and Display</h2>
+
+      <p>
+        Design is more than the appearance of a phone. Consider its size,
+        weight, materials, button placement and how comfortably it fits in
+        your hand. If possible, try the phone in person before purchasing it.
+      </p>
+
+      <p>
+        When comparing displays, look at brightness, colour reproduction,
+        smooth scrolling and readability in direct sunlight. Do not rely on
+        a single specification to judge the overall screen experience.
+      </p>
+
+      <h2>3. Camera: What Matters Most?</h2>
+
+      <p>
+        A good smartphone camera should produce useful results in different
+        conditions, not just in ideal daylight. Look for independent sample
+        photos and videos taken in daylight, indoors, at night and while
+        moving.
+      </p>
+
+      <ul>
+        <li><strong>Main camera:</strong> Check detail, colour balance and dynamic range.</li>
+        <li><strong>Low-light photography:</strong> Look for clean images without excessive blur or noise.</li>
+        <li><strong>Zoom:</strong> Compare optical zoom capabilities with digitally enlarged images.</li>
+        <li><strong>Video:</strong> Consider stabilisation, microphone quality and available recording formats.</li>
+        <li><strong>Selfie camera:</strong> Check skin tones, focus and video-call quality.</li>
+      </ul>
+
+      <p>
+        If photography is your main reason for upgrading, compare original
+        camera samples from reliable reviewers rather than relying only on
+        promotional images.
+      </p>
+
+      <h2>4. Performance and the A20 Pro Chip</h2>
+
+      <p>
+        Processor names and benchmark numbers are only part of the story.
+        Everyday performance also depends on software optimisation, available
+        memory, app design and thermal management.
+      </p>
+
+      <p>
+        If you play demanding games, edit video or use creative applications,
+        look for sustained performance tests. Short benchmark results alone
+        may not show how a phone performs during a long gaming session.
+      </p>
+
+      <p>
+        Verify the final processor name and specifications against Apple's
+        official technical information before making a purchase decision.
+      </p>
+
+      <h2>5. Apple Intelligence and iOS</h2>
+
+      <p>
+        AI features can help with writing, summaries, image-related tasks and
+        other supported activities. However, feature availability may depend
+        on the device, operating-system version, language, region and account
+        settings.
+      </p>
+
+      <ul>
+        <li>Check which AI features are available in your preferred language.</li>
+        <li>Confirm whether features require an internet connection.</li>
+        <li>Review privacy settings before sharing sensitive information with AI tools.</li>
+        <li>Check Apple's official compatibility information for the exact model.</li>
+      </ul>
+
+      <p>
+        Do not assume every announced AI feature is available in every country
+        or language. Confirm current support before buying the phone for a
+        specific AI task.
+      </p>
+
+      <h2>6. Battery Life and Charging</h2>
+
+      <p>
+        Battery life depends on screen brightness, network conditions, gaming,
+        camera use, background activity and battery health. A larger battery
+        capacity does not automatically guarantee longer real-world endurance.
+      </p>
+
+      <p>
+        For a fair comparison, look for tests that use similar brightness,
+        network settings and workloads. Also check charging compatibility,
+        supported charging accessories and whether an adapter is included
+        in the box in your market.
+      </p>
+
+      <h2>7. Storage: Which Capacity Should You Choose?</h2>
+
+      <p>
+        Choose storage based on how you actually use your phone. Photos,
+        high-resolution video, offline downloads and large games can consume
+        space quickly.
+      </p>
+
+      <ul>
+        <li><strong>Everyday use:</strong> Estimate how much space your apps, photos and downloads currently occupy.</li>
+        <li><strong>Photography and video:</strong> Allow extra room if you regularly record high-resolution video.</li>
+        <li><strong>Gaming:</strong> Check the combined size of the games you install.</li>
+        <li><strong>Long-term use:</strong> Leave room for future apps, updates and personal files.</li>
+      </ul>
+
+      <p>
+        Compare the prices of different storage capacities before deciding.
+        Paying for more storage makes sense when you will genuinely use it.
+      </p>
+
+      <h2>8. iPhone 18 Pro Price in Pakistan</h2>
+
+      <p>
+        The price in Pakistan can differ between official channels, importers
+        and independent retailers. Currency movements, stock availability,
+        storage capacity and warranty arrangements can also affect the final
+        price.
+      </p>
+
+      <p>
+        Rather than relying on an unverified price figure, check current
+        quotations from multiple reputable sellers. Confirm the exact model,
+        storage capacity, condition and warranty before paying.
+      </p>
+
+      <h3>Check PTA and Warranty Status</h3>
+
+      <ul>
+        <li>Confirm whether the device is PTA-approved and whether any additional tax or registration cost applies.</li>
+        <li>Ask for a clear invoice and verify the seller's return policy.</li>
+        <li>Check the warranty provider and what it covers.</li>
+        <li>Compare the total cost, not just the advertised price.</li>
+        <li>Verify model details and device condition before completing the purchase.</li>
+      </ul>
+
+      <p>
+        For current device-registration guidance, consult the official
+        <a href="https://www.fbr.gov.pk/" target="_blank" rel="noopener noreferrer">Federal Board of Revenue website</a>
+        and the relevant official Pakistan device-registration services.
+      </p>
+
+      <h2>9. Should You Upgrade to the iPhone 18 Pro?</h2>
+
+      <p>
+        An upgrade is most worthwhile when it solves a real problem or adds
+        features you will use regularly. Consider these points before spending
+        money on a new phone.
+      </p>
+
+      <ul>
+        <li><strong>Consider upgrading</strong> if your current phone has poor battery health, no longer meets your performance needs, or lacks a feature you genuinely need.</li>
+        <li><strong>Consider waiting</strong> if your existing phone works well and the new features offer little practical benefit.</li>
+        <li><strong>Compare alternatives</strong> if camera quality, battery life or value for money matters more than owning the newest model.</li>
+        <li><strong>Set a total budget</strong> that includes accessories, protection and any applicable registration costs.</li>
+      </ul>
+
+      <h2>10. Frequently Asked Questions</h2>
+
+      <h3>Is the iPhone 18 Pro worth buying?</h3>
+      <p>
+        It depends on the confirmed specifications, local price and your
+        current phone. Compare independent reviews and decide whether the
+        improvements justify the cost for your needs.
+      </p>
+
+      <h3>What is the iPhone 18 Pro price in Pakistan?</h3>
+      <p>
+        Prices vary by storage, seller, availability and registration status.
+        Check current quotations from reputable sellers before purchasing.
+      </p>
+
+      <h3>Is the iPhone 18 Pro good for photography?</h3>
+      <p>
+        Review real-world photo and video samples across different lighting
+        conditions. Camera specifications alone do not guarantee the best
+        results for every user.
+      </p>
+
+      <h3>Should I buy an imported iPhone?</h3>
+      <p>
+        Compare the total price, PTA status, warranty, seller reputation and
+        return policy. An attractive advertised price may not represent the
+        lowest total cost.
+      </p>
+
+      <h3>Where can I verify official specifications?</h3>
+      <p>
+        Start with Apple's official website and product announcements. Check
+        the exact model and region so that you do not confuse rumours,
+        leaks or unofficial claims with confirmed specifications.
+      </p>
+
+      <h2>Final Verdict</h2>
+
+      <p>
+        The best buying decision comes from matching a phone's confirmed
+        features to your own priorities. Compare camera samples, performance,
+        battery tests, software support and the total cost in Pakistan before
+        deciding whether the iPhone 18 Pro is the right upgrade for you.
+      </p>
+
+      <p>
+        We aim to make technology easier to understand at Khan Tech Review.
+        As prices and product information can change, verify important
+        details with official sources before making a purchase.
+      </p>
+
+      <div class="note">
+        <strong>Editorial note:</strong> This is an informational buying guide,
+        not a claim of hands-on testing. Confirm specifications and availability
+        through official sources and independent testing before purchasing.
+      </div>
+
+      <h2>Official Sources and Further Reading</h2>
+
+      <ul>
+        <li>
+          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">
+            Apple's official website
+          </a>
+          — product information and specifications.
+        </li>
+        <li>
+          <a href="https://www.apple.com/newsroom/" target="_blank" rel="noopener noreferrer">
+            Apple Newsroom
+          </a>
+          — official product announcements.
+        </li>
+      </ul>
+
+      <section class="related">
+        <h2>Related Article</h2>
+        <p>
+          Comparing flagship smartphones? Read our
+          <a href="samsung-s26-ultra-review.html">Samsung Galaxy S26 Ultra review</a>
+          for another smartphone buying perspective.
+        </p>
+        <p>
+          Explore more technology news and guides on the
+          <a href="index.html">Khan Tech Review homepage</a>.
+        </p>
+      </section>
+    </article>
   </main>
 
-  <footer class="mt-12 border-t border-slate-800 bg-slate-950/60">
-    <div class="mx-auto max-w-6xl px-4 py-8">
-      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <a href="index.html" class="font-extrabold text-white">KHAN <span class="text-neonCyan">TECH REVIEW</span></a>
-          <p class="mt-2 text-sm text-slate-400">Technology news, smartphone reviews and useful guides.</p>
-        </div>
-        <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-4 gap-y-3 text-sm text-slate-400">
-          <a class="hover:text-neonCyan" href="about.html">About Us</a>
-          <a class="hover:text-neonCyan" href="contact.html">Contact Us</a>
-          <a class="hover:text-neonCyan" href="privacy-policy.html">Privacy Policy</a>
-          <a class="hover:text-neonCyan" href="terms.html">Terms</a>
-          <a class="hover:text-neonCyan" href="disclaimer.html">Disclaimer</a>
-        </nav>
-      </div>
-      <p class="mt-6 border-t border-slate-800 pt-5 text-xs text-slate-500">
-        © 2026 Khan Tech Review. All rights reserved.
-      </p>
+  <footer>
+    <p>© 2026 Khan Tech Review. All rights reserved.</p>
+
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="disclaimer.html">Disclaimer</a>
     </div>
+
+    <p>
+      Contact:
+      <a href="mailto:huziamakhan56@gmail.com">huziamakhan56@gmail.com</a>
+    </p>
   </footer>
+
+  <script>
+    (function () {
+      const progress = document.getElementById("readingProgress");
+
+      function updateProgress() {
+        const scrollable =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        const percentage = scrollable > 0
+          ? (window.scrollY / scrollable) * 100
+          : 0;
+
+        progress.style.width = Math.min(100, Math.max(0, percentage)) + "%";
+      }
+
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    })();
+  </script>
 </body>
 </html>

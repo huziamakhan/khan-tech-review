@@ -1,64 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemapgrids.org/schemas/sitemap/0.9">
-    
-    <!-- Homepage -->
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- Articles -->
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/best-agentic-ai-tools-2026.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/iphone-18-pro-leaks.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/samsung-s26-ultra-review.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Essential Pages -->
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/about.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/contact.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/privacy-policy.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/terms.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://huziamakhan.github.io/khan-tech-review/disclaimer.html</loc>
-        <lastmod>2026-10-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://huziamakhan.github.io/khan-tech-review/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>

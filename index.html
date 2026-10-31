@@ -473,7 +473,13 @@ function render(list) {
 
       </div>
     `;
-
+if (article.url) {
+  card.style.cursor = "pointer";
+  card.addEventListener("click", function(event) {
+    if (event.target.closest("button, a")) return;
+    window.location.href = article.url;
+  });
+}
     container.appendChild(card);
 
   });

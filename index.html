@@ -3,72 +3,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Khan Tech Review brings you smartphone reviews, technology news, AI tools and practical technology guides.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Khan Tech Review | Tech News, Smartphone Reviews & AI Guides</title>
+  <meta name="description" content="Explore smartphone reviews, technology news, AI tools, mobile guides and useful technology tips at Khan Tech Review.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://huziamakhan.github.io/khan-tech-review/">
   <meta name="theme-color" content="#0b0f19">
-  <title>Khan Tech Review - Reviews, News & AI Guides</title>
+
+  <meta property="og:title" content="Khan Tech Review | Tech News, Reviews & AI Guides">
+  <meta property="og:description" content="Smartphone reviews, AI tools, technology news and practical guides.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huziamakhan.github.io/khan-tech-review/">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZWM6LX800"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VZWM6LX800');
+  </script>
 
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      background-color: #0b0f19;
+      background: #0b0f19;
       color: #f8fafc;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: Inter, system-ui, Arial, sans-serif;
     }
     .card {
-      background-color: #111827;
+      background: #111827;
       border: 1px solid rgba(255,255,255,.07);
-      transition: border-color .2s ease, transform .2s ease;
+      transition: transform .25s ease, border-color .25s ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56,189,248,.35);
+      transform: translateY(-4px);
+      border-color: rgba(34,211,238,.45);
     }
     .cat.active {
-      background-color: #38bdf8;
+      background: #22d3ee;
       color: #0b0f19;
-      font-weight: bold;
+      border-color: #22d3ee;
+      font-weight: 700;
     }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { cursor: pointer; }
-    #articles { scroll-margin-top: 100px; }
-    @media (max-width: 640px) {
-      .card:hover { transform: none; }
+    .hero-bg {
+      background:
+        linear-gradient(90deg, rgba(11,15,25,.96), rgba(11,15,25,.55)),
+        url("https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1400&q=85") center/cover;
     }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid #22d3ee;
+      outline-offset: 3px;
+    }
+    #mobileMenu { transition: opacity .2s ease; }
   </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
-  <!-- READING PROGRESS -->
-  <div id="progress"
-       class="fixed top-0 left-0 h-1 bg-cyan-400 z-50"
-       style="width:0%"></div>
+  <div id="progress" class="fixed top-0 left-0 h-1 bg-cyan-400 z-[60]" style="width:0%"></div>
 
   <!-- HEADER -->
-  <header class="border-b border-white/10 bg-[#0b0f19]/95 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0f19]/95 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
 
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-400 text-slate-950 font-bold flex items-center justify-center text-xl">
-          K
-        </div>
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-cyan-400 text-slate-950 font-black flex items-center justify-center text-xl">K</div>
         <div>
-          <span class="text-lg font-bold tracking-wider block text-white">KHAN TECH</span>
-          <span class="text-[10px] text-cyan-400 tracking-widest uppercase block">
-            REVIEWS · NEWS · AI GUIDES
-          </span>
+          <span class="text-lg font-extrabold tracking-wider block">KHAN TECH</span>
+          <span class="text-[10px] text-cyan-400 tracking-widest uppercase">Reviews · News · AI Guides</span>
         </div>
       </a>
 
-      <!-- DESKTOP NAVIGATION -->
       <nav class="hidden md:flex items-center gap-5 text-sm">
-        <a href="index.html" class="text-cyan-400 font-medium">Home</a>
+        <a href="index.html" class="text-cyan-400">Home</a>
         <a href="#articles" onclick="filterCategory('Tech News')" class="text-slate-300 hover:text-cyan-400">Tech News</a>
         <a href="#articles" onclick="filterCategory('Mobile Reviews')" class="text-slate-300 hover:text-cyan-400">Mobile Reviews</a>
         <a href="#articles" onclick="filterCategory('AI & Gadgets')" class="text-slate-300 hover:text-cyan-400">AI & Gadgets</a>
@@ -76,209 +89,150 @@
       </nav>
 
       <div class="flex items-center gap-2">
-
-        <button onclick="showBookmarks()"
-          class="flex items-center gap-2 text-xs border border-white/10 rounded-xl px-3 py-2 bg-slate-900 text-slate-300 hover:border-cyan-400">
+        <button onclick="showBookmarks()" class="flex items-center gap-2 text-xs border border-white/10 rounded-xl px-3 py-2 bg-slate-900 text-slate-300 hover:border-cyan-400">
           <i class="fas fa-bookmark text-cyan-400"></i>
-          <span>Saved</span>
-          <span id="savedCount" class="bg-cyan-400 text-slate-950 rounded-full px-1.5 py-0.5 font-bold">0</span>
+          <span class="hidden sm:inline">Saved</span>
+          <span id="savedCount" class="bg-cyan-400 text-slate-950 rounded-full px-2 py-0.5 font-bold">0</span>
         </button>
 
-        <!-- MOBILE MENU BUTTON -->
-        <button id="mobileMenuButton"
-          onclick="toggleMobileMenu()"
-          aria-expanded="false"
-          aria-label="Open navigation menu"
-          class="md:hidden text-slate-300 p-2">
+        <button id="mobileMenuButton" onclick="toggleMobileMenu()" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu" class="md:hidden p-2 text-slate-300 hover:text-cyan-400">
           <i id="mobileMenuIcon" class="fas fa-bars text-xl"></i>
         </button>
       </div>
     </div>
 
     <!-- MOBILE MENU -->
-    <div id="mobileMenu"
-      class="hidden md:hidden border-t border-white/10 bg-[#0b0f19] px-4 py-4 space-y-3">
-
-      <a href="index.html" class="block text-cyan-400 py-2">Home</a>
-      <a href="#articles" onclick="selectMobileCategory('Tech News')" class="block text-slate-300 py-2">Tech News</a>
-      <a href="#articles" onclick="selectMobileCategory('Mobile Reviews')" class="block text-slate-300 py-2">Mobile Reviews</a>
-      <a href="#articles" onclick="selectMobileCategory('AI & Gadgets')" class="block text-slate-300 py-2">AI & Gadgets</a>
-      <a href="#articles" onclick="selectMobileCategory('How-To Guides')" class="block text-slate-300 py-2">How-To Guides</a>
-    </div>
+    <nav id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0b0f19] px-5 py-4 space-y-4">
+      <a href="index.html" onclick="closeMobileMenu()" class="block text-cyan-400">Home</a>
+      <a href="#articles" onclick="selectMobileCategory('Tech News')" class="block text-slate-300">Tech News</a>
+      <a href="#articles" onclick="selectMobileCategory('Mobile Reviews')" class="block text-slate-300">Mobile Reviews</a>
+      <a href="#articles" onclick="selectMobileCategory('AI & Gadgets')" class="block text-slate-300">AI & Gadgets</a>
+      <a href="#articles" onclick="selectMobileCategory('How-To Guides')" class="block text-slate-300">How-To Guides</a>
+      <a href="about.html" onclick="closeMobileMenu()" class="block text-slate-300">About Us</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="block text-slate-300">Contact Us</a>
+    </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
 
-    <!-- HERO SECTION -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+    <!-- HERO -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
 
-      <!-- FEATURED REVIEW -->
-      <section class="lg:col-span-2 card rounded-3xl overflow-hidden flex flex-col justify-between p-6 md:p-8 bg-gradient-to-br from-slate-900 to-slate-950 relative min-h-[320px]">
+      <div class="lg:col-span-2 hero-bg card rounded-3xl overflow-hidden p-7 md:p-10 flex flex-col justify-center min-h-[340px]">
+        <span class="bg-cyan-400/10 text-cyan-300 border border-cyan-400/30 text-xs font-bold px-3 py-2 rounded-full uppercase tracking-wider w-fit mb-5">
+          Featured Review
+        </span>
 
-        <div class="absolute inset-0 bg-cover bg-center opacity-20"
-          style="background-image:url('https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1200&q=80')">
-        </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+          Samsung Galaxy S26 Ultra Review
+        </h1>
 
-        <div class="relative z-10">
-          <span class="bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 text-xs font-bold px-3 py-1 rounded-full uppercase inline-block mb-4">
-            Featured Review
-          </span>
+        <p class="text-slate-300 text-sm md:text-base max-w-xl leading-7 mb-7">
+          Explore the display, camera system, processor, Galaxy AI features and key specifications in our detailed guide.
+        </p>
 
-          <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">
-            Samsung Galaxy S26 Ultra Review
-          </h1>
+        <a href="samsung-s26-ultra-review.html" class="bg-cyan-400 text-slate-950 font-bold rounded-xl px-5 py-3 w-fit hover:bg-cyan-300">
+          Read Full Review <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
 
-          <p class="text-slate-400 text-sm md:text-base mb-6 max-w-xl">
-            Explore the camera, display, performance and features in our detailed review.
-          </p>
-
-          <a href="samsung-s26-ultra-review.html"
-            class="inline-flex items-center gap-2 text-cyan-400 font-bold hover:underline">
-            Read Full Review <i class="fas fa-arrow-right text-xs"></i>
-          </a>
-        </div>
-      </section>
-
-      <!-- PROMO BOX -->
-      <aside class="card rounded-3xl p-6 md:p-8 flex flex-col justify-between bg-slate-900/50">
+      <aside class="card rounded-3xl p-7 flex flex-col justify-between">
         <div>
-          <span class="text-xs text-slate-500 uppercase tracking-widest block mb-2">
-            Khan Tech Review
-          </span>
-
-          <h2 class="text-xl font-bold text-white mb-3">
-            Technology Made Easier
-          </h2>
-
-          <p class="text-sm text-slate-400 mb-6">
-            Discover smartphone reviews, AI tools, technology news and useful guides.
+          <span class="text-xs text-cyan-400 uppercase tracking-widest">Khan Tech Review</span>
+          <h2 class="text-2xl font-bold mt-3 mb-4">Technology Made Easier</h2>
+          <p class="text-sm text-slate-400 leading-7">
+            Discover smartphone reviews, AI tools, technology updates and practical digital guides.
           </p>
         </div>
 
-        <div class="space-y-3">
-          <a href="best-agentic-ai-tools-2026.html"
-            class="text-xs text-cyan-400 font-bold block hover:underline">
+        <div class="space-y-4 mt-8">
+          <a href="best-agentic-ai-tools-2026.html" class="block text-cyan-400 font-bold text-sm hover:underline">
             Explore Agentic AI Tools →
           </a>
-
-          <a href="iphone-18-pro-leaks.html"
-            class="text-xs text-cyan-400 font-bold block hover:underline">
+          <a href="iphone-18-pro-leaks.html" class="block text-cyan-400 font-bold text-sm hover:underline">
             Read iPhone 18 Pro Guide →
+          </a>
+          <a href="about.html" class="block text-slate-300 text-sm hover:text-cyan-400">
+            Learn About Us →
           </a>
         </div>
       </aside>
-    </div>
+    </section>
 
-    <!-- SEARCH AND SECTION TITLE -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+    <!-- SEARCH AND TITLE -->
+    <section id="articles" class="scroll-mt-28">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 mb-7">
+        <div>
+          <h2 id="sectionTitle" class="text-2xl md:text-3xl font-bold">Latest Tech Stories</h2>
+          <p class="text-sm text-slate-400 mt-2">Technology news, reviews and practical guides</p>
+        </div>
 
-      <div>
-        <h2 id="sectionTitle" class="text-2xl font-bold text-white">
-          Latest Tech Stories
-        </h2>
-        <p class="text-sm text-slate-400">
-          Technology news, reviews and practical guides
-        </p>
+        <div class="relative w-full md:w-80">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+          <input id="search" type="search" oninput="searchArticles()" placeholder="Search articles..."
+            class="w-full bg-slate-900 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+        </div>
       </div>
 
-      <div class="relative w-full md:w-72">
-        <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500">
-          <i class="fas fa-search"></i>
-        </span>
-
-        <input type="search"
-          id="search"
-          oninput="searchArticles()"
-          placeholder="Search articles..."
-          class="w-full bg-slate-900 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+      <!-- CATEGORY FILTERS -->
+      <div class="flex gap-2 overflow-x-auto pb-4 mb-6">
+        <button class="cat active whitespace-nowrap text-xs px-4 py-2 rounded-xl border border-white/10" onclick="filterCategory('All',this)">All</button>
+        <button class="cat whitespace-nowrap text-xs px-4 py-2 rounded-xl border border-white/10 bg-slate-900 text-slate-300" onclick="filterCategory('Tech News',this)">Tech News</button>
+        <button class="cat whitespace-nowrap text-xs px-4 py-2 rounded-xl border border-white/10 bg-slate-900 text-slate-300" onclick="filterCategory('Mobile Reviews',this)">Mobile Reviews</button>
+        <button class="cat whitespace-nowrap text-xs px-4 py-2 rounded-xl border border-white/10 bg-slate-900 text-slate-300" onclick="filterCategory('AI & Gadgets',this)">AI & Gadgets</button>
+        <button class="cat whitespace-nowrap text-xs px-4 py-2 rounded-xl border border-white/10 bg-slate-900 text-slate-300" onclick="filterCategory('How-To Guides',this)">How-To Guides</button>
       </div>
-    </div>
 
-    <!-- CATEGORY FILTERS -->
-    <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8">
+      <div id="empty" class="hidden text-center py-16 card rounded-2xl mb-8">
+        <i class="fas fa-search text-3xl text-slate-600 mb-4"></i>
+        <p class="text-slate-400">No articles found.</p>
+        <button onclick="resetFilters()" class="text-cyan-400 text-sm mt-4">Show all articles</button>
+      </div>
 
-      <button onclick="filterCategory('All',this)"
-        class="cat active whitespace-nowrap text-xs px-4 py-3 rounded-xl bg-slate-900 border border-white/10">
-        All
-      </button>
+      <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"></div>
+    </section>
 
-      <button onclick="filterCategory('Tech News',this)"
-        class="cat whitespace-nowrap text-xs px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
-        Tech News
-      </button>
-
-      <button onclick="filterCategory('Mobile Reviews',this)"
-        class="cat whitespace-nowrap text-xs px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
-        Mobile Reviews
-      </button>
-
-      <button onclick="filterCategory('AI & Gadgets',this)"
-        class="cat whitespace-nowrap text-xs px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
-        AI & Gadgets
-      </button>
-
-      <button onclick="filterCategory('How-To Guides',this)"
-        class="cat whitespace-nowrap text-xs px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
-        How-To Guides
-      </button>
-    </div>
-
-    <!-- EMPTY MESSAGE -->
-    <div id="empty" class="hidden text-center py-16 card rounded-2xl mb-8">
-      <p class="text-slate-400 text-sm">
-        No articles found matching your criteria.
-      </p>
-    </div>
-
-    <!-- ARTICLES GRID -->
-    <div id="articles"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-    </div>
-
-    <!-- ABOUT BOX -->
-    <div class="card rounded-3xl p-6 md:p-8 bg-slate-900/40 mb-12">
-      <h3 class="text-lg font-bold text-white mb-2">
-        Welcome to Khan Tech Review
-      </h3>
-
-      <p class="text-sm text-slate-400 leading-relaxed mb-4">
+    <!-- ABOUT -->
+    <section class="card rounded-3xl p-7 md:p-9 mb-12">
+      <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Who We Are</span>
+      <h2 class="text-2xl font-bold mt-3 mb-4">Welcome to Khan Tech Review</h2>
+      <p class="text-sm text-slate-400 leading-7 max-w-4xl">
         Khan Tech Review is a technology publication covering smartphone news and reviews, AI tools, mobile features, digital updates and practical how-to guides. Our aim is to make technology easier to understand and help readers make informed decisions.
       </p>
+      <a href="about.html" class="inline-block mt-5 text-cyan-400 font-bold text-sm hover:underline">More About Us →</a>
+    </section>
 
-      <a href="about.html" class="text-xs text-cyan-400 font-bold hover:underline">
-        More About Us →
+    <!-- CONTACT CTA -->
+    <section class="text-center rounded-3xl border border-cyan-400/20 bg-cyan-400/5 p-8 mb-10">
+      <h2 class="text-2xl font-bold mb-3">Have a question or suggestion?</h2>
+      <p class="text-sm text-slate-400 mb-5">We would love to hear from you.</p>
+      <a href="contact.html" class="inline-block bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl hover:bg-cyan-300">
+        Contact Us
       </a>
-    </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/10 bg-slate-950 py-12 mt-auto">
-
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 mb-10">
 
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-cyan-400 text-slate-950 font-bold flex items-center justify-center">K</div>
-          <span class="text-sm font-bold tracking-wider text-white">KHAN TECH</span>
+          <div class="w-9 h-9 rounded-lg bg-cyan-400 text-slate-950 font-black flex items-center justify-center">K</div>
+          <span class="font-bold tracking-wider">KHAN TECH</span>
         </div>
-
-        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+        <p class="text-xs text-slate-400 leading-6 mb-4">
           Technology news, smartphone reviews, AI updates and useful technology guides.
         </p>
-
-        <a href="mailto:huziamakhan56@gmail.com"
-          class="text-xs text-cyan-400 hover:underline">
+        <a href="mailto:huziamakhan56@gmail.com" class="text-xs text-cyan-400 hover:underline">
           huziamakhan56@gmail.com
         </a>
       </div>
 
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Important Pages
-        </h4>
-
-        <ul class="space-y-2 text-xs text-slate-400">
+        <h3 class="text-sm font-bold uppercase tracking-wider mb-5">Important Pages</h3>
+        <ul class="space-y-3 text-xs text-slate-400">
           <li><a href="about.html" class="hover:text-cyan-400">About Us</a></li>
           <li><a href="contact.html" class="hover:text-cyan-400">Contact Us</a></li>
           <li><a href="privacy-policy.html" class="hover:text-cyan-400">Privacy Policy</a></li>
@@ -288,33 +242,21 @@
       </div>
 
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Featured Articles
-        </h4>
-
-        <ul class="space-y-2 text-xs text-slate-400">
-          <li><a href="samsung-s26-ultra-review.html" class="hover:text-cyan-400">Samsung Galaxy S26 Ultra Review</a></li>
+        <h3 class="text-sm font-bold uppercase tracking-wider mb-5">Featured Articles</h3>
+        <ul class="space-y-3 text-xs text-slate-400">
+          <li><a href="samsung-s26-ultra-review.html" class="hover:text-cyan-400">Samsung Galaxy S26 Ultra</a></li>
           <li><a href="iphone-18-pro-leaks.html" class="hover:text-cyan-400">iPhone 18 Pro Guide</a></li>
           <li><a href="best-agentic-ai-tools-2026.html" class="hover:text-cyan-400">Best Agentic AI Tools 2026</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Follow Us
-        </h4>
-
-        <div class="flex items-center gap-4 text-slate-400">
-          <a href="https://www.youtube.com/@khantechreview-u7f"
-            target="_blank" rel="noopener noreferrer"
-            aria-label="YouTube"
-            class="hover:text-cyan-400 text-lg">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="#" aria-label="Facebook" class="hover:text-cyan-400 text-lg">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </div>
+        <h3 class="text-sm font-bold uppercase tracking-wider mb-5">Follow Us</h3>
+        <a href="https://www.youtube.com/@khantechreview-u7f" target="_blank" rel="noopener noreferrer"
+          aria-label="Khan Tech Review YouTube channel" class="text-2xl text-slate-400 hover:text-red-500">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <p class="text-xs text-slate-500 mt-4">Subscribe for technology videos and updates.</p>
       </div>
     </div>
 
@@ -327,24 +269,17 @@
   <script>
     const articles = [
       {
-        title: "Samsung Galaxy S26 Ultra Full Review",
+        id: "samsung",
+        title: "Samsung Galaxy S26 Ultra Review: Specs, Camera and Galaxy AI",
         category: "Mobile Reviews",
-        date: "Oct 28, 2026",
+        date: "Nov 03, 2026",
         read: "7 min read",
         image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
-        excerpt: "Explore the Samsung Galaxy S26 Ultra design, camera, display, performance and features.",
+        excerpt: "Explore the display, camera system, processor, Galaxy AI features and key specifications.",
         url: "samsung-s26-ultra-review.html"
       },
       {
-        title: "Best Smartphones Under 50,000 PKR In Pakistan",
-        category: "Mobile Reviews",
-        date: "Nov 02, 2026",
-        read: "6 min read",
-        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
-        excerpt: "A detailed 2026 buying guide covering gaming performance, camera, battery, and top smartphone picks under 50k PKR.",
-        url: "best-phones-under-50k-pakistan.html"
-      },
-      {
+        id: "iphone",
         title: "iPhone 18 Pro Review: Features, Camera and Buying Guide",
         category: "Mobile Reviews",
         date: "Oct 22, 2026",
@@ -354,65 +289,21 @@
         url: "iphone-18-pro-leaks.html"
       },
       {
+        id: "agentic-ai",
         title: "Top 5 Best Agentic AI Tools in 2026",
         category: "AI & Gadgets",
-        date: "Oct 25, 2026",
+        date: "Oct 28, 2026",
         read: "6 min read",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
         excerpt: "Explore autonomous AI agents and tools that can help with everyday digital tasks.",
         url: "best-agentic-ai-tools-2026.html"
-      },
-      {
-        title: "7 Battery Saving Hacks Every Android User Should Enable",
-        category: "How-To Guides",
-        date: "Oct 18, 2026",
-        read: "5 min read",
-        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
-        excerpt: "Practical Android settings and habits that may help improve your phone battery life.",
-        url: "android-battery-saving-hacks.html"
-      },
-      {
-        title: "How to Transfer Data from iPhone to Android",
-        category: "How-To Guides",
-        date: "Oct 15, 2026",
-        read: "6 min read",
-        image: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80",
-        excerpt: "A practical guide to moving your contacts, photos and other data between phones.",
-        url: "transfer-iphone-to-android.html"
-      },
-      {
-        title: "Google Pixel 10 Pro Tensor G5 Chip News",
-        category: "Tech News",
-        date: "Oct 12, 2026",
-        read: "4 min read",
-        image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80",
-        excerpt: "Technology news and coverage about Google's Pixel smartphone and Tensor processor.",
-        url: "google-pixel-10-pro-tensor-g5.html"
-      },
-      {
-        title: "Best Budget Smartphones Under $300",
-        category: "Mobile Reviews",
-        date: "Oct 10, 2026",
-        read: "7 min read",
-        image: "https://images.unsplash.com/photo-1546054454-aa26e2b734c7?auto=format&fit=crop&w=800&q=80",
-        excerpt: "A look at affordable smartphones and the features to compare before buying.",
-        url: "best-budget-smartphones-under-300.html"
-      },
-      {
-        title: "How to Speed Up Any Laggy Android Phone in 5 Minutes",
-        category: "How-To Guides",
-        date: "Oct 05, 2026",
-        read: "4 min read",
-        image: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?auto=format&fit=crop&w=800&q=80",
-        excerpt: "Simple Android settings and maintenance tips that may help improve phone responsiveness.",
-        url: "speed-up-android-phone.html"
       }
     ];
 
     let currentCategory = "All";
+    let showingBookmarks = false;
     let saved = [];
 
-    // Load saved articles safely
     try {
       const stored = JSON.parse(localStorage.getItem("khanSavedArticles") || "[]");
       if (Array.isArray(stored)) saved = stored;
@@ -420,23 +311,22 @@
       saved = [];
     }
 
-    // MOBILE MENU
+    function updateSavedCount() {
+      document.getElementById("savedCount").textContent = saved.length;
+    }
+
     function toggleMobileMenu() {
       const menu = document.getElementById("mobileMenu");
       const button = document.getElementById("mobileMenuButton");
       const icon = document.getElementById("mobileMenuIcon");
-
-      if (!menu || !button) return;
 
       const opening = menu.classList.contains("hidden");
       menu.classList.toggle("hidden", !opening);
       button.setAttribute("aria-expanded", String(opening));
       button.setAttribute("aria-label", opening ? "Close navigation menu" : "Open navigation menu");
 
-      if (icon) {
-        icon.classList.toggle("fa-bars", !opening);
-        icon.classList.toggle("fa-xmark", opening);
-      }
+      icon.classList.toggle("fa-bars", !opening);
+      icon.classList.toggle("fa-xmark", opening);
     }
 
     function closeMobileMenu() {
@@ -444,27 +334,161 @@
       const button = document.getElementById("mobileMenuButton");
       const icon = document.getElementById("mobileMenuIcon");
 
-      if (menu) menu.classList.add("hidden");
-
-      if (button) {
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open navigation menu");
-      }
-
-      if (icon) {
-        icon.classList.add("fa-bars");
-        icon.classList.remove("fa-xmark");
-      }
+      menu.classList.add("hidden");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Open navigation menu");
+      icon.classList.add("fa-bars");
+      icon.classList.remove("fa-xmark");
     }
 
     function selectMobileCategory(category) {
-      filterCategory(category);
       closeMobileMenu();
+      filterCategory(category);
+      document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
+    }
 
-      const section = document.getElementById("articles");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
+    function render(list) {
+      const container = document.getElementById("articlesGrid");
+      const empty = document.getElementById("empty");
+      container.innerHTML = "";
+
+      empty.classList.toggle("hidden", list.length > 0);
+
+      list.forEach(article => {
+        const isSaved = saved.includes(article.id);
+
+        const card = document.createElement("article");
+        card.className = "card rounded-2xl overflow-hidden flex flex-col";
+
+        const img = document.createElement("img");
+        img.src = article.image;
+        img.alt = article.title;
+        img.loading = "lazy";
+        img.className = "w-full h-48 object-cover";
+        img.onerror = function() {
+          this.style.display = "none";
+        };
+
+        const content = document.createElement("div");
+        content.className = "p-5 flex flex-col flex-1";
+
+        const category = document.createElement("p");
+        category.className = "text-cyan-400 text-xs font-bold uppercase tracking-wider";
+        category.textContent = article.category;
+
+        const title = document.createElement("h3");
+        title.className = "text-lg font-bold text-white mt-3 leading-6";
+        title.textContent = article.title;
+
+        const meta = document.createElement("p");
+        meta.className = "text-xs text-slate-500 mt-3";
+        meta.textContent = article.date + " · " + article.read;
+
+        const excerpt = document.createElement("p");
+        excerpt.className = "text-sm text-slate-400 leading-6 mt-3";
+        excerpt.textContent = article.excerpt;
+
+        const readLink = document.createElement("a");
+        readLink.href = article.url;
+        readLink.className = "text-cyan-400 text-sm font-bold mt-5 hover:underline";
+        readLink.textContent = "Read Full Article →";
+
+        const saveButton = document.createElement("button");
+        saveButton.className = "mt-5 text-xs border border-white/10 rounded-lg px-3 py-3 text-slate-300 hover:text-cyan-300 text-left";
+        saveButton.innerHTML = '<i class="fas fa-bookmark mr-2"></i>' + (isSaved ? "Remove Saved Article" : "Save Article");
+        saveButton.onclick = function() {
+          toggleSaved(article.id);
+        };
+
+        content.append(category, title, meta, excerpt, readLink, saveButton);
+        card.append(img, content);
+        container.appendChild(card);
+      });
+
+      updateSavedCount();
+    }
+
+    function filterCategory(category, button) {
+      currentCategory = category || "All";
+      showingBookmarks = false;
+
+      document.getElementById("search").value = "";
+      document.getElementById("sectionTitle").textContent =
+        currentCategory === "All" ? "Latest Tech Stories" : currentCategory;
+
+      document.querySelectorAll(".cat").forEach(btn => btn.classList.remove("active"));
+
+      if (button) {
+        button.classList.add("active");
+      } else {
+        const matching = Array.from(document.querySelectorAll(".cat"))
+          .find(btn => btn.textContent.trim() === currentCategory);
+        if (matching) matching.classList.add("active");
       }
+
+      const filtered = currentCategory === "All"
+        ? articles
+        : articles.filter(article => article.category === currentCategory);
+
+      render(filtered);
+    }
+
+    function searchArticles() {
+      showingBookmarks = false;
+      const query = document.getElementById("search").value.toLowerCase().trim();
+
+      const filtered = articles.filter(article =>
+        (currentCategory === "All" || article.category === currentCategory) &&
+        (
+          article.title.toLowerCase().includes(query) ||
+          article.category.toLowerCase().includes(query) ||
+          article.excerpt.toLowerCase().includes(query)
+        )
+      );
+
+      document.getElementById("sectionTitle").textContent =
+        query ? "Search Results" : (currentCategory === "All" ? "Latest Tech Stories" : currentCategory);
+
+      render(filtered);
+    }
+
+    function toggleSaved(id) {
+      if (saved.includes(id)) {
+        saved = saved.filter(item => item !== id);
+      } else {
+        saved.push(id);
+      }
+
+      try {
+        localStorage.setItem("khanSavedArticles", JSON.stringify(saved));
+      } catch (error) {}
+
+      if (showingBookmarks) {
+        render(articles.filter(article => saved.includes(article.id)));
+      } else {
+        searchArticles();
+      }
+
+      updateSavedCount();
+    }
+
+    function showBookmarks() {
+      showingBookmarks = true;
+      document.getElementById("sectionTitle").textContent = "Saved Articles";
+      document.getElementById("search").value = "";
+
+      document.querySelectorAll(".cat").forEach(btn => btn.classList.remove("active"));
+
+      render(articles.filter(article => saved.includes(article.id)));
+      closeMobileMenu();
+      document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function resetFilters() {
+      showingBookmarks = false;
+      currentCategory = "All";
+      document.getElementById("search").value = "";
+      filterCategory("All", document.querySelector(".cat"));
     }
 
     document.addEventListener("keydown", function(event) {
@@ -475,181 +499,12 @@
       if (window.innerWidth >= 768) closeMobileMenu();
     });
 
-    // UPDATE SAVED COUNT
-    function updateSavedCount() {
-      const count = document.getElementById("savedCount");
-      if (count) count.textContent = saved.length;
-    }
-
-    // RENDER ARTICLES
-    function render(list) {
-      const container = document.getElementById("articles");
-      const empty = document.getElementById("empty");
-
-      if (!container || !empty) return;
-
-      container.innerHTML = "";
-
-      if (list.length === 0) {
-        empty.classList.remove("hidden");
-      } else {
-        empty.classList.add("hidden");
-      }
-
-      list.forEach(function(article) {
-        const index = articles.indexOf(article);
-        const isSaved = saved.includes(index);
-
-        const card = document.createElement("article");
-        card.className = "card rounded-2xl overflow-hidden flex flex-col";
-
-        const link = article.url
-          ? `<a href="${article.url}" class="text-cyan-300 text-sm font-bold mt-4 inline-block">Read Full Article →</a>`
-          : `<span class="text-slate-500 text-xs mt-4 inline-block">Article page not available yet</span>`;
-
-        card.innerHTML = `
-          <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover" loading="lazy">
-          <div class="p-5 flex-1 flex flex-col">
-            <p class="text-cyan-300 text-xs font-bold uppercase">${article.category}</p>
-            <h3 class="text-lg font-bold text-white mt-2">${article.title}</h3>
-            <p class="text-xs text-slate-500 mt-2">${article.date} · ${article.read}</p>
-            <p class="text-sm text-slate-400 leading-6 mt-3">${article.excerpt}</p>
-            <div class="mt-auto">${link}</div>
-            <button type="button"
-              class="mt-4 text-xs border border-white/10 rounded-lg px-3 py-3 text-slate-300 hover:text-cyan-300"
-              onclick="toggleSaved(${index})">
-              <i class="${isSaved ? "fas" : "far"} fa-bookmark"></i>
-              ${isSaved ? " Saved" : " Save Article"}
-            </button>
-          </div>
-        `;
-
-        if (article.url) {
-          card.style.cursor = "pointer";
-          card.addEventListener("click", function(event) {
-            if (event.target.closest("button, a")) return;
-            window.location.href = article.url;
-          });
-        }
-
-        container.appendChild(card);
-      });
-
-      updateSavedCount();
-    }
-
-    // CATEGORY FILTER
-    function filterCategory(category, button) {
-      currentCategory = category;
-
-      const search = document.getElementById("search");
-      if (search) search.value = "";
-
-      const title = document.getElementById("sectionTitle");
-      if (title) {
-        title.textContent = category === "All" ? "Latest Tech Stories" : category;
-      }
-
-      document.querySelectorAll(".cat").forEach(function(item) {
-        item.classList.remove("active");
-      });
-
-      if (button) {
-        button.classList.add("active");
-      } else {
-        document.querySelectorAll(".cat").forEach(function(item) {
-          if (item.textContent.trim() === category) item.classList.add("active");
-        });
-      }
-
-      const filtered = category === "All"
-        ? articles
-        : articles.filter(function(article) {
-            return article.category === category;
-          });
-
-      render(filtered);
-    }
-
-    // SEARCH
-    function searchArticles() {
-      const input = document.getElementById("search");
-      if (!input) return;
-
-      const query = input.value.toLowerCase().trim();
-
-      const filtered = articles.filter(function(article) {
-        const categoryMatches =
-          currentCategory === "All" || article.category === currentCategory;
-
-        const textMatches =
-          article.title.toLowerCase().includes(query) ||
-          article.category.toLowerCase().includes(query) ||
-          article.excerpt.toLowerCase().includes(query);
-
-        return categoryMatches && textMatches;
-      });
-
-      const title = document.getElementById("sectionTitle");
-      if (title) title.textContent = query ? "Search Results" : "Latest Tech Stories";
-
-      render(filtered);
-    }
-
-    // SAVE / UNSAVE ARTICLE
-    function toggleSaved(index) {
-      if (saved.includes(index)) {
-        saved = saved.filter(function(item) {
-          return item !== index;
-        });
-      } else {
-        saved.push(index);
-      }
-
-      try {
-        localStorage.setItem("khanSavedArticles", JSON.stringify(saved));
-      } catch (error) {
-        // Saving may be unavailable in private browsing.
-      }
-
-      const visible = currentCategory === "All"
-        ? articles
-        : articles.filter(function(article) {
-            return article.category === currentCategory;
-          });
-
-      render(visible);
-    }
-
-    // SHOW SAVED ARTICLES
-    function showBookmarks() {
-      const title = document.getElementById("sectionTitle");
-      if (title) title.textContent = "Saved Articles";
-
-      render(articles.filter(function(article, index) {
-        return saved.includes(index);
-      }));
-
-      closeMobileMenu();
-
-      const section = document.getElementById("articles");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-
-    // READING PROGRESS
     window.addEventListener("scroll", function() {
-      const progress = document.getElementById("progress");
-      if (!progress) return;
-
       const total = document.documentElement.scrollHeight - window.innerHeight;
-      const percentage = total > 0 ? (window.scrollY / total) * 100 : 0;
-
-      progress.style.width = percentage + "%";
+      const percent = total > 0 ? (window.scrollY / total) * 100 : 0;
+      document.getElementById("progress").style.width = percent + "%";
     });
 
-    // INITIAL LOAD
     render(articles);
   </script>
 
